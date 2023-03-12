@@ -22,7 +22,7 @@ type S3Client struct {
 /*
 Initialize a new S3Client
 */
-func NewClient(endpoint string, accessKey string, secretKey string, bucket string, useSSL bool) (*S3Client, error) {
+func NewS3Client(endpoint string, accessKey string, secretKey string, bucket string, useSSL bool) (*S3Client, error) {
 	minioClient, err := minio.New(
 		endpoint, &minio.Options{
 			Creds:  credentials.NewStaticV4(accessKey, secretKey, ""),
